@@ -30,11 +30,14 @@ public class MainActivity extends AppCompatActivity {
         et = findViewById(R.id.et_inserirNome);
         sexoSpinner = findViewById(R.id.sexoSpinner);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sexo_array,
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.sexo_array,
                 android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sexoSpinner.setAdapter(adapter);
+
         final String[] sexo = new String[1];
+
         sexoSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -57,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     tv.setText("Olá, Bem vinda " + nome);
                 }
-
                 escondeTeclado(view);
             }
         });
